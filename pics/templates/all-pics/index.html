@@ -2,4 +2,20 @@
 
 {% block content %}
 {{block.super}}
+
+
+<div class="container text-center">
+    <h1>Welcome to the Home of Executive Photos</h1>
+
+    <div class="row">
+        {% for pic in Image %}
+        <div class="col-6">
+            <h2>{{pic.name}}</h2>
+            <img src="{{pic.image.url}}" width="300" alt="image1">
+        </div>
+        {% endfor %}
+       
+    </div>
+</div>
+
 {% endblock %}
