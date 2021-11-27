@@ -1,6 +1,6 @@
 body{
     font-family: 'Open Sans Condensed', sans-serif;
-    background-image: url('static/images/bg.jpg');
+    background: url('static/images/bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

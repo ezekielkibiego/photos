@@ -28,3 +28,8 @@ class Images(models.Model):
     def get_all_images(cls):
         images = Images.objects.all()
         return images
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        pics = cls.objects.filter(name__icontains=search_term)
+        return pics
