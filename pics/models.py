@@ -21,11 +21,30 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Location(models.Model):
+    name = models.CharField(max_length=40, null=True)
+
+    
+    def save_location(self):
+        self.save()
+
+    
+    def update_location(self, name):
+        self.name = name
+        self.save()
+
+    
+    def delete_location(self):
+        self.delete()
+
+    def __str__(self):
+        return self.name
+
 
 class Images(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
-    # location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     image = CloudinaryField('image')
     created_at = models.DateTimeField(auto_now_add=True)
