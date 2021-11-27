@@ -1,4 +1,16 @@
+body{
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-image: url('static/images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 h1
 {
   color: green;
+}
+
+.images{
+    width: 100%;
+    height: auto;
 }

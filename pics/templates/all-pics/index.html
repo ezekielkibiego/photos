@@ -9,13 +9,13 @@
 
     <div class="row">
         {% for pic in Image %}
-        <div class="col-6">
-            <h2>{{pic.name}}</h2>
-            <img src="{{pic.image.url}}" width="300" alt="image1">
+        <div class="col-4">
+            <h4>{{pic.name}}</h4>
+            <img class="images" src="{{pic.image.url}}" alt="image1">
         </div>
         {% endfor %}
        
     </div>
-</div>
+</div> <br><br>
 
 {% endblock %}
