@@ -2,7 +2,7 @@ import datetime as dt
 from django.http  import HttpResponse
 from django.http.response import Http404
 from django.shortcuts import render
-from .models import Images
+from .models import Images,Location
 from django.core.exceptions import ObjectDoesNotExist
 
 def index(request):
@@ -29,3 +29,10 @@ def images(request,images_id):
     except ObjectDoesNotExist:
         raise Http404()
     return render(request,"all-pics/images.html", {"images":images})
+
+def location(request, location_id):
+    locations = Location.objects.all()
+    images = Images.objects.filter(location_id=location_id)
+    location = Location.objects.get(id=location_id)
+    title = location
+    return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
