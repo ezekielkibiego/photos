@@ -80,5 +80,11 @@ class Images(models.Model):
     def delete_image(self):
         self.delete()
 
+    @classmethod
+    def search(cls, search_term):
+        images_by_category = cls.filter_by_category(search_term)
+        images_by_location = cls.filter_by_location(search_term)
+        return images_by_category.union(images_by_location)
+
     def __str__(self):
         return self.name

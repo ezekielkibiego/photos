@@ -19,11 +19,13 @@
                     Location
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Kisii</a>
-                    <a class="dropdown-item" href="#">Mombasa</a>
-                    <a class="dropdown-item" href="#">Nairobi</a>
-                    <a class="dropdown-item" href="#">Nakuru</a>
+                    {% for location in locations %}
+                    <a class="dropdown-item" href="/?location={{location.id}}">{{location.name}}</a>
+                    
+                    {%endfor%}
+                    
                 </div>
+            </li>  
             
         </ul>
         

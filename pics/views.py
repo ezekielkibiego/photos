@@ -2,13 +2,33 @@ import datetime as dt
 from django.http  import HttpResponse
 from django.http.response import Http404
 from django.shortcuts import render
-from .models import Images,Location
+from .models import Images,Location,Category
 from django.core.exceptions import ObjectDoesNotExist
 
+# def index(request):
+#     Image = Images.objects.all()
+#     ctx = {'Image':Image, }
+#     return render(request, 'all-pics/index.html', ctx)
+
 def index(request):
-    Image = Images.objects.all()
-    ctx = {'Image':Image}
-    return render(request, 'all-pics/index.html', ctx)
+    categories = Category.objects.all()
+    locations = Location.objects.all()
+    
+    
+    
+    if 'category' in request.GET and request.GET["category"]:
+        category_id = request.GET.get("category")
+        Image = Images.objects.filter(category = category_id)
+        
+    elif 'location' in request.GET and request.GET["location"]:
+        location_id = request.GET.get("location")
+        Image = Images.objects.filter(location = location_id)
+       
+    else:
+        Image = Images.objects.all()
+            
+    ctx = {'Image':Image, 'categories': categories, 'locations':locations }
+    return render(request, 'all-pics/index.html',ctx)
 
 def search_results(request):
 
@@ -36,3 +56,4 @@ def location(request, location_id):
     location = Location.objects.get(id=location_id)
     title = location
     return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
+

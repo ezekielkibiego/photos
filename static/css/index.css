@@ -14,3 +14,21 @@ h1
     width: 100%;
     height: auto;
 }
+
+.photo-details{
+  display: none;
+
+}
+.details{
+  padding: 3rem;
+  border-radius: 15px;
+  position: absolute;
+  left: 50;
+  bottom: 0;
+  z-index: 5;
+  background: #F3B820;
+}
+.img-details{
+  width: 600px;
+
+}
