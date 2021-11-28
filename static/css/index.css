@@ -1,9 +1,6 @@
 body{
     font-family: 'Open Sans Condensed', sans-serif;
-    background: url('static/images/bg.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: bisque;
 }
 h1
 {
@@ -13,22 +10,4 @@ h1
 .images{
     width: 100%;
     height: auto;
-}
-
-.photo-details{
-  display: none;
-
-}
-.details{
-  padding: 3rem;
-  border-radius: 15px;
-  position: absolute;
-  left: 50;
-  bottom: 0;
-  z-index: 5;
-  background: #F3B820;
-}
-.img-details{
-  width: 600px;
-
 }

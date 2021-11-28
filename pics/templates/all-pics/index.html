@@ -12,8 +12,42 @@
         <div class="col-4">
             <h4>{{pic.name}}</h4>
 
-            <a href="/"></a><img class="images" src="{{pic.image.url}}" alt="image1">
+            
+            <div data-toggle ="modal" data-target="#showPicModal">
+                <img class="images" src="{{pic.image.url}}" alt="image1">
+            </div>
+            {{pic.location}}
         </div>
+
+        <div class="modal fade" id="showPicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterName" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-name" id="modalPicName">{{pic.name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src="{{pic.image.url}}" class = "images"alt="{{pic.name}}">
+                  <p class="text-centre">{{pic.description}}</p>
+                  <div class="col-md-4">
+                      <p>Category: {{pic.category}}</p>
+                  </div>
+                  <div class="col-md-4">
+                      <p>Location: {{pic.location}}</p>
+                  </div>
+                  <div class="col-md-4">
+                      <p>Date Posted: {{pic.created_at}}</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <p>Copy link</p>
+                    <input class="form-control" type="text" value="{{pic.image.url}}" id="{{pic.id}}.url">
+                </div>
+              </div>
+            </div>
+          </div>
         {% endfor %}
 
     </div>
