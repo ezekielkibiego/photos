@@ -51,5 +51,5 @@ def location(request, location_id):
     images = Images.objects.filter(location_id=location_id)
     location = Location.objects.get(id=location_id)
     title = location
-    return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
+    return render(request, "all-pics/images.html",{'images': images, 'locations': locations, 'title': title})
 
