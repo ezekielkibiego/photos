@@ -46,10 +46,10 @@ def images(request,images_id):
         raise Http404()
     return render(request,"all-pics/images.html", {"images":images})
 
-def location(request, location_id):
-    locations = Location.objects.all()
-    images = Images.objects.filter(location_id=location_id)
-    location = Location.objects.get(id=location_id)
-    title = location
-    return render(request, "all-pics/images.html",{'images': images, 'locations': locations, 'title': title})
+# def location(request, location_id):
+#     locations = Location.objects.all()
+#     images = Images.objects.filter(location_id=location_id)
+#     location = Location.objects.get(id=location_id)
+#     title = location
+#     return render(request, "all-pics/images.html",{'images': images, 'locations': locations, 'title': title})
 
