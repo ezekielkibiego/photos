@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import cloudinary
+import cloudinary_storage
 import cloudinary.uploader
 import cloudinary.api
 import os
@@ -35,11 +36,13 @@ DATABASES['default'].update(db_from_env)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
-cloudinary.config( 
-  cloud_name = "kibiego", 
-  api_key = "334514816255994", 
-  api_secret = "0uz2ImPjhHwsz4i70JvkSmyh-QA" 
-)
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'kibiego',
+    'API_KEY': '334514816255994',
+    'API_SECRET': '0uz2ImPjhHwsz4i70JvkSmyh-QA'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -69,7 +72,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'photos.apps.PhotosConfig',
-    'cloudinary'
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
