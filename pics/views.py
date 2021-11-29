@@ -1,9 +1,9 @@
-
+import datetime as dt
+from django.http  import HttpResponse
 from django.http.response import Http404
 from django.shortcuts import render
 from .models import Images,Location,Category
 from django.core.exceptions import ObjectDoesNotExist
-
 
 
 def index(request):
