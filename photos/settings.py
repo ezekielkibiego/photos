@@ -49,9 +49,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 cloudinary.config( 
-  cloud_name = "", 
-  api_key = "", 
-  api_secret = "" 
+  cloud_name = "kibiego", 
+  api_key = "334514816255994", 
+  api_secret = "0uz2ImPjhHwsz4i70JvkSmyh-QA" 
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
