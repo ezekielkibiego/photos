@@ -21,11 +21,15 @@ This is a photo gallery web application that showcases incredible pictures. User
  
  ###### Search by Category
  
+ <img src="static/images/Screenshot (3).png">
+
  ###### Search by Location
+
+<img src="static/images/Screenshot (2).png">
 
  ###### Image Details 
  
-
+<img src="static/images/Screenshot (4).png">
  
 ## User Story  
   
