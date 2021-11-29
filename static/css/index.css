@@ -1,13 +1,21 @@
 body{
-    font-family: 'Open Sans Condensed', sans-serif;
-    background-color: rgba(255, 145, 0, 0.459);
+    font-family: roboto;
+    background: rgba(33, 33, 33, 1);
+    color: whitesmoke;
 }
-h1
+h4
 {
-  color: green;
+  color: crimson;
 }
 
 .images{
     width: 100%;
     height: auto;
+}
+.fade{
+  color: rgba(33, 33, 33, 1);
+  
+}
+.modal-body{
+  background-color: crimson;
 }
