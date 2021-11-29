@@ -36,11 +36,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'kibiego',
-    'API_KEY': '334514816255994',
-    'API_SECRET': '0uz2ImPjhHwsz4i70JvkSmyh-QA'
-}
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -158,19 +154,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+SSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static")
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'kibiego',
+    'API_KEY': '334514816255994',
+    'API_SECRET': '0uz2ImPjhHwsz4i70JvkSmyh-QA'
+}
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # configuring the location for media
-MEDIA_URL = '/media/'
+MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configure Django App for Heroku.
