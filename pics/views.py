@@ -39,17 +39,17 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'all-pics/search.html',{"message":message})
 
-def images(request,images_id):
-    try:
-        images = Images.objects.get(id = images_id)
-    except ObjectDoesNotExist:
-        raise Http404()
-    return render(request,"all-pics/images.html", {"images":images})
+# def images(request,images_id):
+#     try:
+#         images = Images.objects.get(id = images_id)
+#     except ObjectDoesNotExist:
+#         raise Http404()
+#     return render(request,"all-pics/images.html", {"images":images})
 
 # def location(request, location_id):
 #     locations = Location.objects.all()
 #     images = Images.objects.filter(location_id=location_id)
 #     location = Location.objects.get(id=location_id)
 #     title = location
-#     return render(request, "all-pics/images.html",{'images': images, 'locations': locations, 'title': title})
+#     return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
 
