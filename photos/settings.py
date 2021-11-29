@@ -13,7 +13,6 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
-
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
@@ -74,7 +73,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'photos.apps.PhotosConfig',
     'cloudinary_storage',
     'cloudinary',
 ]
