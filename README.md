@@ -16,11 +16,16 @@ This is a photo gallery web application that showcases incredible pictures. User
 ## Screenshots 
 
 ###### Home page
+
+<img src="static/images/Screenshot (1).png">
  
- ###### Search results
+ ###### Search by Category
  
+ ###### Search by Location
+
  ###### Image Details 
  
+
  
 ## User Story  
   
