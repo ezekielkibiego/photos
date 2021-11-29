@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import cloudinary_storage
-from pathlib import Path
+import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
@@ -36,11 +35,17 @@ DATABASES['default'].update(db_from_env)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
-
-
+cloudinary.config( 
+  cloud_name = "kibiego", 
+  api_key = "334514816255994", 
+  api_secret = "0uz2ImPjhHwsz4i70JvkSmyh-QA" 
+)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'kibiego',
+    'API_KEY': '334514816255994',
+    'API_SECRET': '0uz2ImPjhHwsz4i70JvkSmyh-QA'
+}
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -50,10 +55,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3-8@u1kl09-m%3pt(5hhi$0q1ju%^a-isw#txdn0nf92u&rgu+'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -69,7 +74,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pics.apps.PicsConfig',
+    'photos.apps.PhotosConfig',
     'cloudinary_storage',
     'cloudinary',
 ]
@@ -155,27 +160,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-SSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "static"),
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'kibiego',
-    'API_KEY': '334514816255994',
-    'API_SECRET': '0uz2ImPjhHwsz4i70JvkSmyh-QA'
-}
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # configuring the location for media
-MEDIA_URL = '/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configure Django App for Heroku.
