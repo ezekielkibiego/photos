@@ -1,8 +1,10 @@
 # photos
 
+### 26th Nov. 2021
+
 ## Author  
   
->[Ezekiel Kibiego](https://github.com/ezekielkibiego)  
+[Ezekiel Kibiego](https://github.com/ezekielkibiego)  
   
 # Description  
 This is a photo gallery web application that showcases incredible pictures. Users can view photos uploaded by the website admin. Users can also view photos based on the location, by clicking on the listed locations in the navbar dropdown as well as by category. They can also copy the link to a photo to paste.
